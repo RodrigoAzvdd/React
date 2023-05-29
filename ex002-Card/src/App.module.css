@@ -1,0 +1,19 @@
+.title {
+    /* font feia da porra do krl */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+    background-color: #D7E1E7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    min-height: 100vh;
+    margin: 20px;
+    padding: 30px;
+}
+
+.img {
+
+}
