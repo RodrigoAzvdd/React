@@ -1,5 +1,5 @@
 import ProfileImg from '../ProfileImg/index.jsx'
-import img from '../../assets/elegante.jpg'
+import img from '../../assets/react.svg'
 import styles from './style.module.css'
 import Button from '../Button/index.jsx'
 
@@ -25,6 +25,5 @@ export default () => {
                 <Button text={'Twitter'} />
             </div>
         </div>
-
     )
 }
