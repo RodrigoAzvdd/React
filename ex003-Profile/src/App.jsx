@@ -8,9 +8,12 @@ export default () => {
       display: 'grid',
       placeContent: 'center'
     }}>
-      <Card />
+      <Card 
+        name='John Doe'
+        bio= 'Full-Stack javascript developer at Acme Inc.'
+        phoneNumber='+5511987654321'
+        email='john.doe@email.com'
+      />
     </div>
-      
-    
   )
 }

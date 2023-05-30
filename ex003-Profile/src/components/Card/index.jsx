@@ -3,20 +3,20 @@ import img from '../../assets/react.svg'
 import styles from './style.module.css'
 import Button from '../Button/index.jsx'
 
-export default () => {
+export default (props) => {
     return (
         <div className={styles.card}>
             <div className={styles.header}>
                 <ProfileImg className={styles.profileImg} img={img} />
-                <h2>John Doe</h2>
+                <h2>{props.name}</h2>
             </div>
             <div className={styles.info}>
                 <hr />
-                <p>Full-Stack javascript developer at Acme Inc.</p>
+                <p>{props.bio}</p>
                 <hr />
-                <p>+5511987654321</p>
+                <p>{props.phoneNumber}</p>
                 <hr />
-                <p>john.doe@email.com</p>
+                <p>{props.email}</p>
                 <hr />
             </div>
             <div className={styles.socialMedias}>
