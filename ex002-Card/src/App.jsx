@@ -1,4 +1,4 @@
-import styles from './App.module.css'
+import styles from './styles/App.module.css'
 import Title from "./components/Title";
 import InfoText from './components/InfoText';
 import Button from './components/Button';

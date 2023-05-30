@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    background-color: #D7E1E7;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    padding: 3rem;
+    width: 60rem;
+    height: 40rem;
+    gap: 40px;
+}
+
+.cardImg {
+    border: 8px solid #000;
+}
+
+.infoText {
+    margin-top: 20px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+

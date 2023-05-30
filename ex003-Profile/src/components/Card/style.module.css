@@ -1,0 +1,35 @@
+.card {
+    width: 25rem;
+    text-align: center;
+    background-color: #fff;
+    padding: 2rem 0 2rem 0;
+    border-radius: 1rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+hr {
+    border-color: #abcae7;
+}
+p {
+    margin: 1rem;
+    font-weight: 600;
+}
+
+.socialMedias {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profileImg {
+
+}
