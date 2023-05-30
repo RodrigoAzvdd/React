@@ -7,12 +7,16 @@ import ImgCard from './components/ImgCard';
 export default function App(){
   return (
     <div className={styles.container}>
-        <ImgCard />
-      <div className="textContent">
-        <Title />
-        <InfoText />
-        <Button />
-      </div>
+       <div className={styles.container01}>
+        <div className={styles.container02}>
+          <ImgCard />
+        </div>
+        <div className={styles.container03}>
+          <Title />
+          <InfoText />
+          <Button />
+        </div>
+       </div>
     </div>
   )
 }

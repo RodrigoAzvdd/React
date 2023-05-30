@@ -1,10 +1,12 @@
+import styles from '../App.module.css'
+
 export default () => {
     return (
-        <button style={{
-            width: '180px',
-            height: '55px',
+        <button className={styles.btn} style={{
+            width: '150px',
+            height: '50px',
             borderRadius: '10px',
-            fontSize: '17px',
+            fontSize: '15px',
             fontWeight: 600,
             fontFamily: 'sans-serif',
             backgroundColor: '#000',
