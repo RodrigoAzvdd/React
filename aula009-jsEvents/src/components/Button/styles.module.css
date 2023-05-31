@@ -1,0 +1,19 @@
+.btn {
+    display: grid;
+    place-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    max-width: 9.8rem;
+    color: #fff;
+    border-radius: .6rem;
+    border: 0;
+    padding: .5rem 3rem;
+    background: rgb(25, 109, 188);
+    background: linear-gradient(90deg, rgba(25, 109, 188, 1) 0%, rgba(119, 202, 229, 1) 100%);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    cursor: pointer;   
+    transform: scale(1.1);
+}
