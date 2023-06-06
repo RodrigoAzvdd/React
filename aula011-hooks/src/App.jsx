@@ -1,7 +1,8 @@
 import './App.css'
 import useCounter from './hooks/useCounter'
-function App() {
 
+function App() {
+  
   //usando o hook criado
   const counter = useCounter()
 

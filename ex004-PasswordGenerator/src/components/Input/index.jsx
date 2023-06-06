@@ -1,7 +1,7 @@
 import style from './style.module.scss'
 
-export default () => {
+export default ({ text }) => {
     return (
-        <input  className={ style.inpt } disabled />
+        <input value={text}  className={ style.inpt } disabled />
     )
 }

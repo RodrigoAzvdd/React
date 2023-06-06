@@ -1,13 +1,12 @@
-import Button from "./components/Button"
 import Card from "./components/Card"
 import Footer from "./components/Footer"
-import Input from "./components/Input"
-import LinkButton from "./components/LinkButton"
 import Title from "./components/Title"
-
-
+import useGenerate from "./hooks/useGenerate"
 
 export default () => {
+
+    const generate = useGenerate()
+
     return (
         <>
             <div style={{
@@ -25,7 +24,7 @@ export default () => {
 
                 }}>
                     <Title text={"Gerador de Senhas"} />
-                    <Card />
+                    <Card onclickBtn={generate.generatePassword} textInput={generate.password} />
                 </section>
                 <Footer />
             </div>

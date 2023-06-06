@@ -2,11 +2,11 @@ import Button from '../Button'
 import Input from '../Input'
 import style from './style.module.scss'
 
-export default () => {
+export default ({onclickBtn, textInput}) => {
     return (
         <div className={style.card}>
-            <Button text={"Gerar!"}/>
-            <Input />
+            <Button onClick={onclickBtn}  text={"Gerar!"}/>
+            <Input text={textInput} />
             <Button text={"Copiar!"}/>
         </div>
     )

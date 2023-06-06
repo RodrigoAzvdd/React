@@ -1,7 +1,7 @@
 import style from './style.module.scss'
 
-export default ({ text }) => {
+export default ({ text, onClick }) => {
     return (
-        <button className={style.btn}>{text}</button>
+        <button onClick={onClick} className={style.btn}>{text}</button>
     )
 }
