@@ -1,33 +1,36 @@
-import Card from "./components/Card"
-import Footer from "./components/Footer"
-import Title from "./components/Title"
-import useGenerate from "./hooks/useGenerate"
+import { useState } from "react"
 
-export default () => {
+function App() {
+    const [password, setPassword] = useState("")
+    const [copyText, setCopyText] = useState("Copiar")
 
-    const generate = useGenerate()
+    function generate() {
+        const characters = "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?"
+        const length = 12
+        let newPassword = ""
+        for (let i = 0; i < length; i++) {
+            const position = Math.floor(Math.random() * characters.length)
+            newPassword += characters[position]
+        }
+        setPassword(newPassword)
+        setCopyText("Copiar")
+    }
+
+    function copyToClipboard() {
+        window.navigator.clipboard.writeText(password)
+        setCopyText("Copiado!")
+    }
 
     return (
-        <>
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                minHeight: "100vh",
-            }}>
-                <section className="main-content" style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flex: "1",
-                    gap: "5rem"
-
-                }}>
-                    <Title text={"Gerador de Senhas"} />
-                    <Card onclickBtn={generate.generatePassword} textInput={generate.password} />
-                </section>
-                <Footer />
+        <div>
+            <h1>Gerador de senhas</h1>
+            <button onClick={generate}>Gerar!</button>
+            <button onClick={copyToClipboard}>{copyText}</button>
+            <div>
+                <p>{password}</p>
             </div>
-        </>
+        </div>
     )
 }
+
+export default App
