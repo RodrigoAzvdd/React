@@ -26,11 +26,11 @@ function App() {
     }
 
     return (
-        <div className="rod">
+        <div className="container">
             <h1>Gerador de senhas</h1>
             <p>
                 <label htmlFor="showInput">Personalizar tamanho?</label>
-                <input onClick={() => setShowInput(currentValue => !currentValue)} type="checkbox" id="showInput" />
+                <input onClick={() => setShowInput(showInput => !showInput)} type="checkbox" id="showInput" />
             </p>
 
             {showInput ? (
@@ -41,7 +41,7 @@ function App() {
             ) : null}
 
             <div>
-                <button onClick={generate}>Gerar senha de {showInput ? customSize : padrao}</button>
+                <button onClick={generate}>Gerar senha de {showInput ? customSize : defaultSize} caracteres</button>
                 <button onClick={copyToClipboard}>{copyText}</button>
             </div>
             <div>
