@@ -1,11 +1,11 @@
-export default ({ passwordSize, setPasswordSize }) => {
-
+export default ({ customSize, setCustomSize }) => {
     return (
         <input
             type="number"
             id="passwordSize"
             min={1}
-            value={passwordSize}
-            onChange={(ev) => setPasswordSize(ev.target.value) } />
+            value={customSize}
+            onChange={(ev) => setCustomSize(ev.target.value)}
+        />
     )
 }

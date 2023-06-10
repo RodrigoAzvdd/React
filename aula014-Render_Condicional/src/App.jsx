@@ -36,7 +36,7 @@ function App() {
             {showInput ? (
                 <div>
                     <label htmlFor="passwordSize">Tamanho: </label>
-                    <Input setPasswordSize={setCustomSize} passwordSize={customSize} />
+                    <Input setCustomSize={setCustomSize} customSize={customSize} />
                 </div>
             ) : null}
 
