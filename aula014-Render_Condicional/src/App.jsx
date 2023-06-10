@@ -4,8 +4,12 @@ import Input from "./components/Input"
 function App() {
     const [password, setPassword] = useState("")
     const [copyText, setCopyText] = useState("Copiar")
-    const [passwordSize, setPasswordSize] = useState(10)
-    const [showInputRod, setShowInputRod] = useState(false)
+    const [customSize, setCustomSize] = useState(10)
+    const [showInput, setShowInput] = useState(false)
+    const padrao = 8
+    const passwordSize = showInput ? customSize : padrao
+
+    
 
     function generate() {
         const characters = "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?"
@@ -24,18 +28,26 @@ function App() {
     }
 
     return (
-        <div>
+        <div className="rod">
             <h1>Gerador de senhas</h1>
+            <p>
             <label htmlFor="showInput">Personalizar tamanho?</label>
-            <input onClick={() => setShowInputRod(currentValue => !currentValue)}  type="checkbox" id="showInput" />
+            <input onClick={() => setShowInput(currentValue => !currentValue)} type="checkbox" id="showInput" />
+            </p>
+
+            {showInput ? (
+                <div>
+                    <label htmlFor="passwordSize">Tamanho: </label>
+                    <Input setPasswordSize={setCustomSize} passwordSize={customSize} />
+                </div>
+            ) : null}
+
             <div>
-                <label htmlFor="passwordSize">Tamanho: </label>
-                <Input setPasswordSize={setPasswordSize} passwordSize={passwordSize} />
+                <button onClick={generate}>Gerar senha de {showInput ? customSize : padrao}</button>
+                <button onClick={copyToClipboard}>{copyText}</button>
             </div>
-            <button onClick={generate}>Gerar senha de {showInputRod ? passwordSize : 8}</button>
-            <button onClick={copyToClipboard}>{copyText}</button>
             <div>
-                <p>{password}</p>
+                <p className="p">{password}</p>
             </div>
         </div>
     )
