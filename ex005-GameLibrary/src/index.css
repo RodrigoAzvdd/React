@@ -6,14 +6,25 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-body {
+#App {
+  min-height: 100vh;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
   background-color: #252525;
   min-height: 100vh;
 }
 
+form {
+  margin-bottom: 3rem;
+}
+
 h1 {
+  text-align: center;
+  margin: 2rem 0;
   font-size: 3.2em;
   line-height: 1.1;
   color: #ffffff;
@@ -61,25 +72,14 @@ input {
 
 .games {
   display: flex;
+  justify-content: center;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
-.games>div {
-  display: flex;
-  align-items: start;
-  gap: 2rem;
-  margin-top: 2rem;
-  width: 28rem;
-}
-
 .games img {
-  height: 100%;
-  width: 10rem;
-  object-fit: cover;
-}
-
-.games h2 {
-  margin: 0;
+  margin-top: 1rem;
+  width: 12rem;
 }
 
 @media (prefers-color-scheme: light) {
