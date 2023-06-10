@@ -87,6 +87,7 @@ function App() {
         flexWrap: "wrap",
         gap: "4rem"
       }}>
+        {/* usamos o map para poder renderizar um lista usando react */}
         {games.map((game) => (
           <div
             key={game.id}
@@ -98,8 +99,9 @@ function App() {
               width: "20rem"
             }}>
             <h2>Title: {game.title}</h2>
+            <h3>Release Year: {game.releaseYear}</h3>
             <img
-              style={{ width: "300px", height: "30rem" }}
+              style={{ width: "300px", height: "30rem", marginTop: "1rem" }}
               src={game.coverImage}
               alt="img" />
             <p>Description: {game.description}</p>
