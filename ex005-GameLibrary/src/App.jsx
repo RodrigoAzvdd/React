@@ -4,7 +4,7 @@ export default () => {
 
   const [games, setGames] = useState(() => {
     const storedGames = localStorage.getItem("game-lib")
-    if(!storedGames) return []
+    if (!storedGames) return []
     return JSON.parse(storedGames)
   })
 
@@ -29,7 +29,7 @@ export default () => {
       const newState = state.filter(game => game.id !== id)
       localStorage.setItem("game-lib", JSON.stringify(newState))
       return newState
-    } )
+    })
   }
 
   const handleSubmit = ev => {
@@ -67,15 +67,15 @@ export default () => {
       </form>
       <div className="games" >
         {games.map(game => (
-          <div key={game.id} style={{ display: "flex", flexDirection: "column" }}>
-            <div>
+          <div key={game.id} style={{ width: "22rem", display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: ".5rem" }}>
               <h2>Title: {game.title}</h2>
-              <button onClick={() => removeGame(game.id)} style={{marginTop: "1rem"}} type="button">Remover</button>
+              <button onClick={() => removeGame(game.id)} type="button">Remover</button>
+              <img
+                src={game.cover}
+                alt="cover"
+              />
             </div>
-            <img
-              src={game.cover}
-              alt="cover"
-            />
           </div>
         ))}
       </div>

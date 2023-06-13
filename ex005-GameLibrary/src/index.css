@@ -77,8 +77,7 @@ input {
   flex-wrap: wrap;
 }
 
-.games img {
-  margin-top: 1rem;
+img {
   width: 12rem;
 }
 
