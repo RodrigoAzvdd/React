@@ -1,82 +1,18 @@
-import { useState } from "react"
+import Game from "./components/Game"
+import Title from "./components/Title"
+import NewGameForm from "./components/NewGameForm"
+import useGameCollection from "./hooks/useGameCollection"
 
 export default () => {
-
-  const [games, setGames] = useState(() => {
-    const storedGames = localStorage.getItem("game-lib")
-    if (!storedGames) return []
-    return JSON.parse(storedGames)
-  })
-
-  const [title, setTile] = useState("")
-  const [cover, setCover] = useState("")
-
-  const addGame = ({ title, cover }) => {
-    const id = Math.floor(Math.random() * 100000)
-    const game = { id, title, cover }
-    // state é o valor atual, no caso o array atual.
-    // o ...state(spread), fala que o array agora será todos os elementos ja existentes do array + novo elemento
-
-    setGames(state => {
-      const newState = [...state, game]
-      localStorage.setItem("game-lib", JSON.stringify(newState))
-      return newState
-    })
-  }
-
-  const removeGame = (id) => {
-    setGames(state => {
-      const newState = state.filter(game => game.id !== id)
-      localStorage.setItem("game-lib", JSON.stringify(newState))
-      return newState
-    })
-  }
-
-  const handleSubmit = ev => {
-    ev.preventDefault()
-    addGame({ title, cover })
-    setCover("")
-    setTile("")
-  }
-
+  const { games, addGame, removeGame } = useGameCollection()
+  
   return (
     <div id="App">
-      <h1>Biblioteca de Jogos</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Titulo:</label>
-          <input
-            type="text"
-            name="title"
-            id="title"
-            value={title}
-            onChange={(e) => setTile(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="cover">Capa:</label>
-          <input
-            type="text"
-            name="cover"
-            id="cover"
-            value={cover}
-            onChange={(e) => setCover(e.target.value)}
-          />
-        </div>
-        <button type="submit">Adicionar a Biblioteca</button>
-      </form>
+      <Title text={"Biblioteca de Jogos"} />
+      <NewGameForm addGame={addGame} />
       <div className="games" >
         {games.map(game => (
-          <div key={game.id} style={{ width: "22rem", display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center", justifyContent: "center" }}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: ".5rem" }}>
-              <h2>Title: {game.title}</h2>
-              <button onClick={() => removeGame(game.id)} type="button">Remover</button>
-              <img
-                src={game.cover}
-                alt="cover"
-              />
-            </div>
-          </div>
+          <Game title={game.title} cover={game.cover} id={game.id} key={game.id} btnFunction={removeGame} />
         ))}
       </div>
     </div>
