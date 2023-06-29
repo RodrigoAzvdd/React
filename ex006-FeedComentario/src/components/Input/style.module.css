@@ -1,0 +1,23 @@
+.inputArea {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.label {
+    font-size: .8rem;
+}
+
+.input {
+    height: 2rem;
+    border: 1px solid #b1b1b1;
+}
+
+.input:focus {
+    outline: none !important;
+    border-color: #747474;
+}
+
+.input:hover {
+    border-color: #747474;
+}
