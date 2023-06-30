@@ -7,7 +7,10 @@
 }
 
 .textarea {
-    width: 100%;
+    padding: 0 .5rem;
+    width: 100% fit-content;
+    max-width: 100%;
+    min-width: 100%;
     border: 1px solid #b1b1b1;
 }
 

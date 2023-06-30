@@ -3,31 +3,25 @@ import Button from "./components/Button"
 import Input from "./components/Input"
 import Textarea from "./components/Textarea"
 import Title from "./components/Title"
+import Comments from './components/CommentsSection'
+import useAddComment from './hooks/useAddComment'
+import Form from './components/Form'
 
 function App() {
+
+  const { comments, addComment } = useAddComment()
+
   return (
     <div id="App">
 
       <section className='mainContent'>
         <Title text={"Seção de Comentários"} />
 
-        <Input
-          id={"email"}
-          name={"email"}
-          label={"Email"}
-          type={"text"}
-        />
+        <Form addComment={addComment} />
 
-        <Textarea
-          id={"comentario"}
-          name={"comentario"}
-          label={"Comentário"}
-          rows={"5"}
-        />
+        <Comments lista={comments}/>
 
-        <Button text={'Enviar comentário'} />
       </section>
-
     </div>
   )
 }
