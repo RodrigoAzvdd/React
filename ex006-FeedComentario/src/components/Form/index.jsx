@@ -1,21 +1,20 @@
-import { useState } from "react";
-import Button from "../Button";
-import Input from "../Input";
-import Textarea from "../Textarea";
+import { useState } from "react"
+import Button from "../Button"
+import Input from "../Input"
+import Textarea from "../Textarea"
 
 
-export default function Form({ addComment }) {
-
+export default function Form({ func }) {
     const [email, setEmail] = useState("")
     const [comment, setComment] = useState("")
 
-    const handleSubmit = ev => {
+    const handleClick = ev => {
         ev.preventDefault()
-        addComment({ email, comment })
-      }
+        func(email, comment)
+    }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleClick}>
             <Input
                 id={"email"}
                 name={"email"}
@@ -32,7 +31,7 @@ export default function Form({ addComment }) {
                 func={setComment}
             />
 
-            <Button text={'Enviar comentário'} />
+            <Button text={"Enviar comentário"} />
         </form>
     )
 }

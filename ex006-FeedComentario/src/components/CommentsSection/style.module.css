@@ -1,9 +1,0 @@
-.commentsDiv {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-.comments {
-    font-size: .8rem;
-}

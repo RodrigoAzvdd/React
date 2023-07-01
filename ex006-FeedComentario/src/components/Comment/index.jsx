@@ -1,8 +1,8 @@
-export default function Comment ({email, comment}) {
+export default function Comment ({ email, comment, id }) {
     return (
-        <div className="comments">
-            <p>{email}</p>
-            <p>{comment}</p>
+        <div key={id} >
+            <p>Email: {email}</p>
+            <p>Comentário: {comment}</p>
         </div>
     )
 }
