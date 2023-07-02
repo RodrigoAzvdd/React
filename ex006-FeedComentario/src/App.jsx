@@ -2,7 +2,6 @@ import './style/App.css'
 import Title from "./components/Title"
 import useAddComment from './hooks/useAddComment'
 import Form from './components/Form'
-import Comment from './components/Comment'
 import CommentArea from './components/CommentArea'
 
 function App() {
