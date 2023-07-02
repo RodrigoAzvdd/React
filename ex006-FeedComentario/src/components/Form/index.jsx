@@ -14,7 +14,7 @@ export default function Form({ func }) {
     }
 
     return (
-        <form onSubmit={handleClick}>
+        <form onSubmit={handleClick}> 
             <Input
                 id={"email"}
                 name={"email"}
