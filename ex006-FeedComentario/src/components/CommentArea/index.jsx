@@ -3,6 +3,7 @@ import Comment from "../Comment"
 export default function CommentArea({ commentsArray }) {
     return (
         <>
+        <hr />
             {
                 (commentsArray.length == 0) ?
                     <p style={{ fontSize: ".8rem" }}>

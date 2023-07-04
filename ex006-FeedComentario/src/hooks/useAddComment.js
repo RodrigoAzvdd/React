@@ -10,7 +10,7 @@ export default function useGameCollection() {
         const comment = { id, email, commentContent, creationDate }
 
         setComments((state) => {
-            const newCommentsArray = [...state, comment]
+            const newCommentsArray = [comment, ...state]
             return newCommentsArray
         })
     }
