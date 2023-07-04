@@ -1,12 +1,12 @@
 import './style/App.css'
 import Title from "./components/Title"
-import useAddComment from './hooks/useAddComment'
+import useCommentsCollection from './hooks/useCommentsCollection'
 import Form from './components/Form'
 import CommentArea from './components/CommentArea'
 
 function App() {
 
-  const { comments, addComment } = useAddComment()
+  const { comments, addComment } = useCommentsCollection()
 
   return (
     <div id="App">
