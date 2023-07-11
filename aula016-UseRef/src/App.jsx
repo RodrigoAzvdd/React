@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import './App.css'
+import RefExample from './components/RefExample'
 
 function App() {
 
@@ -40,6 +41,11 @@ function App() {
         </p>
       </section>
       <button onClick={showValues}>Exibir valores</button>
+      <hr />
+      <section>
+        <h2>UseRef Input DOM</h2>
+        <RefExample />
+      </section>
     </div>
   )
 }
